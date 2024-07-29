@@ -1,0 +1,13 @@
+.home {
+    display: flex;
+    .homeContainer {
+        flex: 5;
+
+        .widgets {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            justify-content: space-between;
+        }
+    }
+}
