@@ -3,11 +3,13 @@
     .homeContainer {
         flex: 5;
 
-        .widgets {
+        .widgets, .charts {
             display: flex;
             gap: 20px;
             padding: 20px;
-            justify-content: space-between;
+        }
+        .charts {
+            padding: 5px 20px;
         }
     }
 }
