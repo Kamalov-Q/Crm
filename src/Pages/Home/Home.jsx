@@ -5,6 +5,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Widget from "../../Components/Widget/Widget";
 import "./Home.scss";
+import TableData from "../../Components/Table/TableData";
 const Home = () => {
   return (
     <div className="home">
@@ -12,14 +13,20 @@ const Home = () => {
       <div className="homeContainer">
         <Navbar />
         <div className="widgets">
-          <Widget  widgetType="user" />
-          <Widget  widgetType="earning"/>
-          <Widget  widgetType="order" />
-          <Widget  widgetType="balance" />
+          <Widget widgetType="user" />
+          <Widget widgetType="earning" />
+          <Widget widgetType="order" />
+          <Widget widgetType="balance" />
         </div>
         <div className="charts">
-          <Feature/>
-          <Chart/>
+          <Feature />
+          <Chart aspect={2/1} title={"Last 6 month (Revenue)"}/>
+        </div>
+        <div className="listContainer">
+          <div className="listTitle">
+            Latest transactions
+          </div>
+          <TableData/>
         </div>
       </div>
     </div>

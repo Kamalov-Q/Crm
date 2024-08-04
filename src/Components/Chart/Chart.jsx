@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import "./Chart.scss";
 import {
@@ -9,7 +10,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-const Chart = () => {
+const Chart = ({aspect, title}) => {
   const data = [
     {name: "January", Total: 1200},
     {name: "February", Total: 1100},
@@ -26,8 +27,8 @@ const Chart = () => {
   ]
   return (
     <div className="chart">
-      <div className="title">Last 6 month (Revenue)</div>
-      <ResponsiveContainer width="100%" style={{padding:"15px"}} aspect={2/1}>
+      <div className="title">{title}</div>
+      <ResponsiveContainer width="100%" style={{padding:"15px"}} aspect={aspect}>
         <AreaChart
           width={730}
           height={250}
@@ -40,9 +41,9 @@ const Chart = () => {
               <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
             </linearGradient>
           </defs>
-          <XAxis dataKey="name" />
-          <YAxis />
-          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" stroke="grey" />
+          {/* <YAxis stroke="grey"/> */}
+          <CartesianGrid strokeDasharray="3 3" className="chartGrid"/>
           <Tooltip />
           <Area
             type="monotone"

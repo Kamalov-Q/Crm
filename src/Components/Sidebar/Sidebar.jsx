@@ -11,64 +11,66 @@ import BrandingWatermarkIcon from '@mui/icons-material/BrandingWatermark';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import LogoutIcon from '@mui/icons-material/Logout';
 import "./Sidebar.scss";
+import { Link } from 'react-router-dom';
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebarTop">
-        <span className="sidebar__logo">Admin Panel</span>
+        <Link className='sidebarTop_link' to={`/`}>
+        <span className="sidebar__logo">Admin Panel</span></Link>
       </div>
       <hr />
       <div className="sidebarCenter">
         <ul>
           <p className="title">MAIN</p>
-          <li>
+          <Link to={`/`} className='sidebar_link'>
             <DashboardIcon className='icon'/>
             <span>Dashboard</span>
-          </li>
+          </Link>
           <p className="title">LISTS</p>
-          <li>
+          <Link className='sidebar_link' to={`/users`}>
             <AccountCircleIcon className='icon' />
             <span>Users</span>
-          </li>
-          <li>
+          </Link>
+          <Link to={`/products`} className='sidebar_link'>
             <InventoryIcon className='icon'/>
             <span>Products</span>
-          </li>
-          <li>
+          </Link>
+          <Link className='sidebar_link'>
             <FilterFramesIcon className='icon'/>
             <span>Orders</span>
-          </li>
-          <li>
+          </Link>
+          <Link className='sidebar_link'>
             <LocalShippingIcon className='icon'/>
             <span>Delivery</span>
-          </li>
+          </Link>
           <p className="title">USEFUL</p>
-          <li>
+          <Link className='sidebar_link'>
             <QueryStatsIcon className='icon'/>
             <span>Stats</span>
-          </li>
-          <li>
+          </Link>
+          <Link className='sidebar_link'>
             <NotificationsIcon className='icon'/>
             <span>Notifications</span>
-          </li>
+          </Link>
           <p className="title">SERVICE</p>
-          <li>
+          <Link className='sidebar_link'>
             <SettingsSuggestIcon className='icon'/>
             <span>System Health</span>
-          </li>
-          <li>
+          </Link>
+          <Link className='sidebar_link'>
             <BrandingWatermarkIcon className='icon'/>
             <span>Logs</span>
-          </li>
+          </Link>
           <p className="title">USER</p>
-          <li>
+          <Link className='sidebar_link'>
             <AccountBoxIcon className='icon'/>
             <span>Profile</span>
-          </li>
-          <li>
+          </Link>
+          <Link className='sidebar_link'>
             <LogoutIcon className='icon'/>
             <span>Log Out</span>
-          </li>
+          </Link>
         </ul>
       </div>
       <div className="sidebarBottom">

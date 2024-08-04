@@ -1,9 +1,16 @@
 /* eslint-disable no-unused-vars */
 import './List.scss'
+import Sidebar from '../../Components/Sidebar/Sidebar'
+import Navbar from '../../Components/Navbar/Navbar'
+import DataTable from '../../Components/DataTable/DataTable'
 const List = () => {
   return (
     <div className='list'>
-      <h1>This is the Lists Page</h1>
+      <Sidebar/>
+      <div className="listContainer">
+        <Navbar/>
+        <DataTable/>
+      </div>
     </div>
   )
 }
